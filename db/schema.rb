@@ -10,9 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_02_17_192838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "airports", force: :cascade do |t|
+    t.string "city"
+    t.string "code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "flight_tickets", force: :cascade do |t|
+    t.integer "confirmation_id"
+    t.integer "ticket_number"
+    t.integer "flight_number"
+    t.integer "price"
+    t.datetime "departure_at"
+    t.datetime "arrival_at"
+    t.bigint "departure_id", null: false
+    t.bigint "arrival_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["arrival_id"], name: "index_flight_tickets_on_arrival_id"
+    t.index ["departure_id"], name: "index_flight_tickets_on_departure_id"
+    t.index ["user_id"], name: "index_flight_tickets_on_user_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "flight_ticket_id", null: false
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["flight_ticket_id"], name: "index_purchases_on_flight_ticket_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "flight_tickets", "airports", column: "arrival_id"
+  add_foreign_key "flight_tickets", "airports", column: "departure_id"
+  add_foreign_key "flight_tickets", "users"
+  add_foreign_key "purchases", "flight_tickets"
+  add_foreign_key "purchases", "users"
 end
