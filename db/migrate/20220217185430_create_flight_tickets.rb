@@ -2,7 +2,7 @@ class CreateFlightTickets < ActiveRecord::Migration[6.1]
   def change
     create_table :flight_tickets do |t|
       t.integer :confirmation_id
-      t.integer :ticket_number
+      t.bigint :ticket_number
       t.integer :flight_number
       t.integer :price
       t.datetime :departure_at
