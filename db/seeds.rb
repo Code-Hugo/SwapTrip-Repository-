@@ -71,7 +71,7 @@ User.create!(email: "marc@yahoo.com", password: "123456")
 10.times do 
     FlightTicket.create!(
     confirmation_id: [*('a'..'z'),*('0'..'9')].shuffle[0,6].join,
-    ticket_number: rand(100000000..999999999),
+    ticket_number: rand(1000000000000..9999999999999),
     airline_code: ([*('A'..'Z')]).sample(3).join,
     flight_number: ([*('0'..'9')]).sample(4).join,
     price: rand(50..1000),
