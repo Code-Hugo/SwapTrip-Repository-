@@ -69,18 +69,18 @@ faker_time = Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 200,
 b = DateTime.parse faker_time
 User.create!(email: "marc@yahoo.com", password: "123456")
 10.times do 
-    FlightTicket.create!(
-    confirmation_id: [*('a'..'z'),*('0'..'9')].shuffle[0,6].join,
-    ticket_number: rand(100000000..999999999),
-    airline_code: ([*('A'..'Z')]).sample(3).join,
-    flight_number: ([*('0'..'9')]).sample(4).join,
-    price: rand(50..1000),
-    departure_id: airports.sample.id,
-    arrival_id: airports.sample.id,
-    departure_at: faker_time,
-    arrival_at: b + 8.hour,
-    user_id: User.last.id
-  )
+  FlightTicket.create!(
+  confirmation_code: [*('a'..'z'),*('0'..'9')].shuffle[0,6].join,
+  ticket_number: rand(1000000000000..9999999999999),
+  airline_code: ([*('A'..'Z')]).sample(3).join,
+  flight_number: ([*('0'..'9')]).sample(4).join,
+  price: rand(50..1000),
+  departure_id: airports.sample.id,
+  arrival_id: airports.sample.id,
+  departure_at: faker_time,
+  arrival_at: b + 8.hour,
+   user_id: User.last.id
+ )
 end
 
 puts "Seeded!"

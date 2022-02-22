@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_120608) do
+ActiveRecord::Schema.define(version: 2022_02_22_194358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2022_02_19_120608) do
   end
 
   create_table "flight_tickets", force: :cascade do |t|
-    t.integer "confirmation_id"
     t.bigint "ticket_number"
     t.integer "flight_number"
     t.integer "price"
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_02_19_120608) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "airline_code"
+    t.string "confirmation_code"
     t.index ["arrival_id"], name: "index_flight_tickets_on_arrival_id"
     t.index ["departure_id"], name: "index_flight_tickets_on_departure_id"
     t.index ["user_id"], name: "index_flight_tickets_on_user_id"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 2022_02_19_120608) do
   create_table "purchases", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "flight_ticket_id", null: false
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status"
     t.index ["flight_ticket_id"], name: "index_purchases_on_flight_ticket_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
