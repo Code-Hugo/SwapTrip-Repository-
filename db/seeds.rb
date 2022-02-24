@@ -59,28 +59,28 @@ airports << Airport.create!(
     city: "Alburquerque"
 )
 
-
 # airports_codes = ["AAL", "AAR", "ABA", "ABI", "ABJ", "ABQ", "ANU", "BGY", "BKF", "CAC", "EBL", "FLL", "GUR", "GZA", "KHK", "LEX", "PSC", "SNF", "TSN"]
-
 #airports_arrival = ["ZHR", "ZIA", "VCE", "SJC", "RKV", "RIX", "PHF", "ONT", "MXE", "MDL", "LGG", "JPA", "IDA", "HND", "MHO", "GVA", "GPS", "FOD"]
-
 faker_time = Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 200, format: :long)
-
 b = DateTime.parse faker_time
 User.create!(email: "marc@yahoo.com", password: "123456")
-10.times do 
-  FlightTicket.create!(
+new_flight = []
+50.times do 
+  new_flight << FlightTicket.new(
   confirmation_code: [*('a'..'z'),*('0'..'9')].shuffle[0,6].join,
   ticket_number: rand(1000000000000..9999999999999),
   airline_code: ([*('A'..'Z')]).sample(3).join,
   flight_number: ([*('0'..'9')]).sample(4).join,
   price: rand(50..1000),
   departure_id: airports.sample.id,
-  arrival_id: airports.sample.id,
   departure_at: faker_time,
   arrival_at: b + 8.hour,
-   user_id: User.last.id
+  user_id: User.last.id
  )
 end
-
+new_flight.each do |flight_ticket|
+  flight_ticket.arrival_id = airports.reject{|airport| airport.id == flight_ticket.departure_id}.sample.id
+  flight_ticket.save!
+end
+puts "#{FlightTicket.count} tickets are created!"
 puts "Seeded!"
