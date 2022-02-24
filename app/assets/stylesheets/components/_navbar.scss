@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #487DAD;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,60 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar {
+  background: #487dad;
+  width: 100
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.login {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.login:hover {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.signup {
+  background: white;
+  color: black;
+  border-radius: 25px;
+  border: none;
+}
+
+.signup:hover {
+  background: black;
+  color: white;
+  border-radius: 25px;
+  border: 1px solid white;
+  transition: 0.3s;
+}
+
+.buttons {
+  text-align: end;
+}
+
+@media (min-width: 1200px) {
+.container {
+  max-width: 100%;
+}
+}
+
+.navbar-brand {
+  width: 25%;
 }
