@@ -14,8 +14,12 @@
       </ul>
 
       <div class="buttons col-md-3 text-end">
-        <button type="button" class="login btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="signup btn btn-primary">Sign-up</button>
+        <% if user_signed_in? %>
+          <%= link_to "Log-out", destroy_user_session_path, class: "signup btn btn-primary" %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "login btn btn-outline-primary me-2" %>
+          <%= link_to "Sign_up", new_user_registration_path, class: "signup btn btn-primary" %>
+        <% end %>
       </div>
     </header>
   </div>
