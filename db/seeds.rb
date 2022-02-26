@@ -38,6 +38,7 @@ airportsarrival << Airport.create!(
 airportsarrival << Airport.create!(
     code: "ANU",
     city: "Antigua and Barbuda"
+)
 
 airports << Airport.create!(
   code: "AAL",
@@ -47,6 +48,7 @@ airports << Airport.create!(
 airportsarrival << Airport.create!(
     code: "AAR",
     city: "Aarhus"
+)
 
 airports << Airport.create!(
   code: "ABA",
@@ -57,7 +59,7 @@ airportsarrival << Airport.create!(
     code: "ABI",
     city: "Abilene"
 )
-  
+
 airports << Airport.create!(
   code: "ABQ",
   city: "Alburquerque"
@@ -123,7 +125,7 @@ new_flight = []
   confirmation_code: [*('a'..'z'),*('0'..'9')].shuffle[0,6].join,
   ticket_number: rand(1000000000000..9999999999999),
   airline_code: ([*('A'..'Z')]).sample(3).join,
-  #flight_number: ([*('A'..'Z')]).sample(2).join([*('0'..'9')]).sample(3).join,
+  flight_number: ([*('A'..'Z')]).sample(2).join + ([*('0'..'9')]).sample(3).join,
   price: rand(50..1000),
   departure_id: airports.sample.id,
   departure_at: faker_time,
@@ -132,7 +134,7 @@ new_flight = []
   user_id: User.last.id
  )
 end
-  
+
 new_flight.each do |flight_ticket|
   flight_ticket.arrival_id = airports.reject { |airport| airport.id == flight_ticket.departure_id }.sample.id
   flight_ticket.save!
