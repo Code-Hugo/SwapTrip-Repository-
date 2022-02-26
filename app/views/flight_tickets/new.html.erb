@@ -7,11 +7,11 @@
   <%= f.input :confirmation_code,
       label: "*Alphanumerical confirmation code that appears in your flight confiramtion (i.e. V3LKZ)" %>
   <%= f.association :departure, label_method: :city, collection: @airports,
-      label: "Departure airport city, eg: for Barcelona" %>
+      label: "*Departure destination of your flight" %>
   <%= f.input :departure_at,
       label: "Departure hour(24h) & date, Minutes, DD-MM-YYYY eg: 13:25, 23.02.2023" %>
  <%= f.association :arrival, label_method: :city, collection: @airports,
-      label: "Arrival airport city, eg: for Berlin" %>
+      label: "*Arrival destination of your flight" %>
   <%= f.input :arrival_at,
       label: "Arrival hour(24h) & date, Minutes, DD-MM-YYYY eg: 13:25, 23.02.2023" %>
   <%= f.input :airline_code
