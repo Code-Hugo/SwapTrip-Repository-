@@ -3,9 +3,11 @@ class FlightTicketsController < ApplicationController
 
   def index
     if params[:departure].present?
-      @flightticket = FlightTicket.search_by_city(params[:departure])
+      # @flight_tickets = FlightTicket.search_by_city(params[:departure])
+      @departure = Airport.find_by_city(params[:departure].capitalize)
+      @flight_tickets = FlightTicket.where(departure: @departure)
     else
-      @flightticket = FlightTicket.all
+      @flight_tickets = FlightTicket.all
     end
   end
 

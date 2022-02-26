@@ -1,5 +1,4 @@
 <h1>all tickets</h1>
 <%  @flight_tickets.each do |flight_ticket| %>
-    <%=   flight_ticket.confirmation_id %>
-    <%#= link_to "show page", flight_ticket_path(@flight_ticket) %>
-<% end  %> 
+  <%= flight_ticket.ticket_number%>
+<% end  %>
