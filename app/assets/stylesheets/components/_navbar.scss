@@ -13,7 +13,8 @@
 
 .navbar {
   background: #487dad;
-  width: 100
+  width: 100;
+  border-bottom: 3px solid white;
 }
 
 .nav-link {
@@ -65,4 +66,8 @@
 
 .navbar-brand {
   width: 25%;
+}
+
+.logo {
+  width: 200px;
 }
