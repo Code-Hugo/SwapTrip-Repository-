@@ -1,21 +1,21 @@
 <h1>List your flight<h1>
-<% simple_form_for(@flight_ticket) do |f| %>
-  <%= f.input :ticket_number
+<%= simple_form_for(@flight_ticket) do |f| %>
+  <%= f.input :ticket_number,
       label: "Ticket number consists of 13 digits"%>
-  <%= f.input :flight_number
+  <%= f.input :flight_number,
       label: "Flight code consists of 2-3 characters and up to 4 digits: eg TK123"%>
-  <%= f.input :confirmation_code
+  <%= f.input :confirmation_code,
       label: "Confirmation number" %>
-  <%= f.input :price
+  <%= f.input :price,
       label: "Enter the desired price in the set currency" %>
-  <%= f.input :departure_id
-      label: "Departure airport code: consists of 3 letters: eg LAX" %>
-  <%= f.input :departure_at
-      label: "Departure date Hour(24h), Minutes, DD-MM-YYYY eg: 13:25, 23.02.2023" %>
-  <%= f.input :arrival_id
-      label: "Arrival airport code: consists of 3 letters: eg LAX" %>
-  <%= f.input :arrival_at
-      label: "Arrival date Hour(24h), Minutes, DD-MM-YYYY eg: 13:25, 23.02.2023" %>
+  <%= f.association :departure, label_method: :city, collection: @airports,
+      label: "Departure airport city, eg: for Barcelona" %>
+  <%= f.input :departure_at,
+      label: "Departure hour(24h) & date, Minutes, DD-MM-YYYY eg: 13:25, 23.02.2023" %>
+ <%= f.association :arrival, label_method: :city, collection: @airports,
+      label: "Arrival airport city, eg: for Berlin" %>
+  <%= f.input :arrival_at,
+      label: "Arrival hour(24h) & date, Minutes, DD-MM-YYYY eg: 13:25, 23.02.2023" %>
   <%= f.input :airline_code %>
-  <%= f.submit, "Submit" %>
-<%= end %>
+  <%= f.submit %>
+<% end %>

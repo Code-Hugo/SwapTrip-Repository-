@@ -3,7 +3,7 @@ class CreateFlightTickets < ActiveRecord::Migration[6.1]
     create_table :flight_tickets do |t|
       t.integer :confirmation_id
       t.bigint :ticket_number
-      t.integer :flight_number
+      t.string :flight_number
       t.integer :price
       t.datetime :departure_at
       t.datetime :arrival_at

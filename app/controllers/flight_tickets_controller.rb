@@ -1,7 +1,7 @@
 class FlightTicketsController < ApplicationController
-    
+
   before_action :set_ticket, only:[:show]
-    
+
     def index
         @flight_tickets = FlightTicket.all
     end
@@ -12,14 +12,16 @@ class FlightTicketsController < ApplicationController
 
     def new
         @flight_ticket = FlightTicket.new
+        @airports = Airport.order(:city)
     end
 
     def create
       @flight_ticket = FlightTicket.new(ticket_params)
-      @flight_ticket.user = current_user
+      #@flight_ticket.user = current_user
       if @flight_ticket.save!
         redirect_to flight_ticket_path(@flight_ticket)
       else
+        raise
         render :new
       end
     end
