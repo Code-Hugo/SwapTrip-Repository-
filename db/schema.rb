@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2022_02_22_194358) do
   end
 
   create_table "flight_tickets", force: :cascade do |t|
-    t.bigint "ticket_number"
-    t.string "flight_number"
+    t.integer "ticket_number"
+    t.integer "flight_number"
     t.integer "price"
     t.datetime "departure_at"
     t.datetime "arrival_at"
