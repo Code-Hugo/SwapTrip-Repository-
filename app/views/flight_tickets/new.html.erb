@@ -6,8 +6,6 @@
       label: "Flight code consists of 2-3 characters and up to 4 digits: eg TK123"%>
   <%= f.input :confirmation_code,
       label: "Confirmation number" %>
-  <%= f.input :price,
-      label: "Enter the desired price in the set currency" %>
   <%= f.association :departure, label_method: :city, collection: @airports,
       label: "Departure airport city, eg: for Barcelona" %>
   <%= f.input :departure_at,
