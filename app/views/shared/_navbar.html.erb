@@ -1,8 +1,8 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<div class="container">
-    <header class="navbar d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+  <header class="navbar d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+  <div class="container">
       <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "/app/assets/images/swaptrip_logo_white_1.png" %>
+        <%= image_tag "swaptrip_logo_white_1.png", class: "logo" %>
       <% end %>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -22,5 +22,5 @@
           <%= link_to "Sign_up", new_user_registration_path, class: "signup btn btn-primary" %>
         <% end %>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>

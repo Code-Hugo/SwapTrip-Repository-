@@ -3,6 +3,10 @@
   background: #487DAD;
 }
 
+.logo {
+  width: 200px;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -13,7 +17,8 @@
 
 .navbar {
   background: #487dad;
-  width: 100
+  width: 100;
+  border-bottom: 3px solid white;
 }
 
 .nav-link {
