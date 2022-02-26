@@ -17,8 +17,10 @@ class FlightTicket < ApplicationRecord
     end
   end
   include PgSearch::Model
-  pg_search_scope :search_by_city,
-    against: [ :departure_id, :arrival_id ],
+  pg_search_scope :search_by_departure,
+    associated_against: {
+      departure: %i[ city ]
+    },
     using: {
       tsearch: { prefix: true }
     }
