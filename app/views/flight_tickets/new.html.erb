@@ -6,8 +6,6 @@
       label: "*Alphanumerical code consisting of airline code and three digits (VY850)"%>
   <%= f.input :confirmation_code,
       label: "*Alphanumerical confirmation code that appears in your flight confiramtion (i.e. V3LKZ)" %>
-  <%= f.input :price,
-      label: "Enter the desired price in the set currency" %>
   <%= f.association :departure, label_method: :city, collection: @airports,
       label: "Departure airport city, eg: for Barcelona" %>
   <%= f.input :departure_at,
