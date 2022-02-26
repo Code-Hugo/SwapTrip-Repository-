@@ -28,7 +28,6 @@ body {
 
 .cards {
   width: auto;
-  margin-top: 20px;
 }
 
 .card {
@@ -45,4 +44,12 @@ body {
   border-radius: 25px;
   border: 1px solid #487dad;
   margin-bottom: 10px;
+}
+
+.container-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

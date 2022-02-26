@@ -24,7 +24,7 @@
     </form>
 </div>
 </div>
-<div class="container">
+<div class="container-list">
   <div class="cards">
     <% @flight_tickets.take(2).each do |flight| %>
       <%= link_to flight_tickets_path(flight) do %>
@@ -53,5 +53,24 @@
       </div>
       <% end %>
     <% end %>
+  </div>
+  <div class="form-container">
+    <div class="form-home">
+      <div class="form-header">
+        <h3 class="form-h3">Check if your flight ticket swappable!</h3>
+        <%= image_tag('ticket.svg', class: "ticket-img-form")%>
+        <%= image_tag('airlines.svg', class: "airlines-img-form")%>
+      </div>
+      <div class="form-fields">
+      <p class="form-title">Flight ticket details</p>
+        <input type="text" required placeholder="Passanger Full Name" class="label_inside form-control">
+        <input type="text" required placeholder="Booking Code" class="label_inside form-control">
+        <input type="text" required placeholder="Reservation Email" class="label_inside form-control">
+        <input type="text" required placeholder="Flight Number" class="label_inside form-control">
+      </div>
+      <div class="submit_row form-group my-3">
+        <div class="formButton">Validate</div>
+      </div>
+      </div>
   </div>
 </div>
