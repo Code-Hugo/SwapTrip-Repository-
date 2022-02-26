@@ -8,12 +8,12 @@
 require 'faker'
 FlightTicket.destroy_all
 User.destroy_all
+Airport.destroy_all
 puts "Database cleared"
 
 puts "Seeding"
 sleep 1
 puts "Creating flight_ticket"
-
 
 airports = []
 airportsarrival = []
@@ -22,15 +22,15 @@ airportsarrival << Airport.create!(
     code: "GZA",
     city: "Gaza"
 )
+airports << Airport.create!(
+  code: "CAG",
+  city: "Cagliari"
+)
+airports << Airport.create!(
+  code: "BKF",
+  city: "Katmai National Park"
+)
 
-airports << Airport.create!(
-    code: "CAG",
-    city: "Cagliari"
-)
-airports << Airport.create!(
-    code: "BKF",
-    city: "Katmai National Park"
-)
 airportsarrival << Airport.create!(
     code: "BGY",
     city: "Bergamo"
@@ -38,26 +38,29 @@ airportsarrival << Airport.create!(
 airportsarrival << Airport.create!(
     code: "ANU",
     city: "Antigua and Barbuda"
-)
+
 airports << Airport.create!(
-    code: "AAL",
-    city: "Aalborg"
+  code: "AAL",
+  city: "Aalborg"
 )
+
 airportsarrival << Airport.create!(
     code: "AAR",
     city: "Aarhus"
-)
+
 airports << Airport.create!(
-    code: "ABA",
-    city: "Abakan"
+  code: "ABA",
+  city: "Abakan"
 )
+
 airportsarrival << Airport.create!(
     code: "ABI",
     city: "Abilene"
 )
+  
 airports << Airport.create!(
-    code: "ABQ",
-    city: "Alburquerque"
+  code: "ABQ",
+  city: "Alburquerque"
 )
 
 airports << Airport.create!(
@@ -116,6 +119,7 @@ User.create!(email: "marc@yahoo.com", password: "123456")
 new_flight = []
 50.times do
   new_flight << FlightTicket.new(
+
   confirmation_code: [*('a'..'z'),*('0'..'9')].shuffle[0,6].join,
   ticket_number: rand(1000000000000..9999999999999),
   airline_code: ([*('A'..'Z')]).sample(3).join,
@@ -128,8 +132,9 @@ new_flight = []
   user_id: User.last.id
  )
 end
+  
 new_flight.each do |flight_ticket|
-  flight_ticket.arrival_id = airports.reject{|airport| airport.id == flight_ticket.departure_id}.sample.id
+  flight_ticket.arrival_id = airports.reject { |airport| airport.id == flight_ticket.departure_id }.sample.id
   flight_ticket.save!
 end
 puts "#{FlightTicket.count} tickets are created!"
