@@ -3,8 +3,13 @@ class FlightTicketsController < ApplicationController
   before_action :set_ticket, only:[:show]
 
     def index
-        @flight_tickets = FlightTicket.all
-    end
+        if params[:departure].present?
+          @departure = Airport.find_by_city(params[:departure].capitalize)
+          @flight_tickets = FlightTicket.where(departure: @departure)
+        else
+          @flight_tickets = FlightTicket.all
+        end
+      end
 
     def show
       @user = current_user
@@ -17,7 +22,6 @@ class FlightTicketsController < ApplicationController
 
     def create
       @flight_ticket = FlightTicket.new(ticket_params)
-      #@flight_ticket.user = current_user
       if @flight_ticket.save!
         redirect_to flight_ticket_path(@flight_ticket)
       else
