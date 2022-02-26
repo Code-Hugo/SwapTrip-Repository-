@@ -4,7 +4,7 @@
   background-position: center;
   padding: 5vh 0;
   text-align: -webkit-center;
-  background-image: url('../../images/banner_bg.png');
+  background-image: asset-url('banner_bg.png');
 }
 
 .banner h1 {
@@ -20,4 +20,29 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+body {
+  background-color: white;
+}
+
+.cards {
+  width: auto;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #487dad;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 280px;
+  width: 670px;
+  border-radius: 25px;
+  border: 1px solid #487dad;
+  margin-bottom: 10px;
 }

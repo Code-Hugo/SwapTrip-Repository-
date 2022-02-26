@@ -1,0 +1,55 @@
+.cardfirst {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  font-size: 14px;
+}
+
+.cardsecond {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cardthird {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+}
+
+.avatar {
+    width: 40px;
+    border-radius: 50%;
+    border: white 1px solid;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.card_first_title {
+  font-weight: bold;
+}
+
+.card_first_desc {
+  background: white;
+  color: black;
+  padding: 0px 25px;
+  border: 1px solid white;
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
+
+.card_image {
+  border-radius: 25px;
+}

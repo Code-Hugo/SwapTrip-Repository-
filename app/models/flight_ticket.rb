@@ -16,7 +16,6 @@ class FlightTicket < ApplicationRecord
       #errors.add(:arrival_id, 'must be different to departure')
     end
   end
-
   include PgSearch::Model
   pg_search_scope :search_by_city,
     against: [ :departure_id, :arrival_id ],
