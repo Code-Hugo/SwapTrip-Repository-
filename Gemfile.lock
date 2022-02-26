@@ -240,6 +240,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  arm64-darwin-20
   x86_64-darwin-20
   x86_64-linux
 
@@ -273,5 +274,6 @@ DEPENDENCIES
 RUBY VERSION
    ruby 2.7.4p191
 
+
 BUNDLED WITH
-   2.3.4
+   2.3.5
