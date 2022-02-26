@@ -1,0 +1,76 @@
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.new_user {
+  border: 2px solid #487dad;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 25px;
+  width: 300px;
+  text-align: -webkit-center;
+}
+
+.login_line {
+  border-bottom: 2px solid #487dad;
+}
+
+.password {
+  font-size: 15px;
+  font-weight: bold;
+  color: #487dad;
+}
+
+.email {
+  font-size: 15px;
+  font-weight: bold;
+  color: #487dad;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-control {
+  border-radius: 25px;
+  border: 2px solid #487dad;
+  background-color: white!important;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  background: #487dad;
+  color: white;
+  padding: 5px 35px;
+  border-radius: 25px;
+}
+
+.form-check {
+  font-size: 10px;
+  display: flex;
+  margin-top: 0.3rem;
+  align-items: flex-end;
+}
+
+.googleLogo {
+  width: 40px;
+}
+
+.googlebtn {
+  font-size: 10px;
+  color: #487dad;
+  font-weight: 700;
+  border: 2px solid #487dad;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: 170px;
+}

@@ -24,10 +24,16 @@ class FlightTicketsController < ApplicationController
     @flight_ticket = FlightTicket.new(ticket_params)
     @flight_ticket.user_id = current_user.id
     if @flight_ticket.save!
-      redirect_to flight_ticket_path(@flight_ticket)
+      redirect_to edit_flight_ticket_path(@flight_ticket)
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
