@@ -1,0 +1,19 @@
+.validate-bottom {
+    display: none;
+}
+
+.box-popup {
+    display: flex;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: #487DAD;
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+}

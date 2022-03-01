@@ -85,8 +85,11 @@
         <input type="text" required placeholder="Flight Number" class="label_inside form-control">
       </div>
       <div class="submit_row form-group my-3">
-        <div class="formButton">Validate</div>
+        <input type ="submit" class="formButton" id="validate-btn" value ="Validate">
       </div>
       </div>
   </div>
 </div>
+  <div class="validate-bottom">
+    <%= render partial: "validate" %>
+  </div>
