@@ -1,0 +1,57 @@
+.form-container {
+  max-width: fit-content;
+}
+
+.form-home {
+  max-width: 600px;
+  background: #487dad;
+  padding: 30px;
+  min-height: 570px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-img-form {
+  float: right;
+}
+
+.airlines-img-form {
+  position: relative;
+  z-index: 0;
+  left: 450px;
+  width: 55px;
+  top: 60px;
+}
+
+.form-title {
+  text-transform: uppercase;
+  color: white;
+}
+
+.form-fields .label_inside {
+  margin-bottom: 15px;
+}
+
+.form-fields {
+  width: 70%;
+}
+
+.form-h3 {
+  color: white;
+  font-weight: 600;
+}
+
+.formButton {
+  border-radius: 25px !important;
+  border: 1px solid white;
+  background-color: white;
+  text-align: center;
+  color: #687dad;
+  padding: 5px 25px;
+}
+
+.submit_row {
+  width: 150px;
+}
