@@ -48,20 +48,19 @@
           <div class="cardfirst">
             <%= image_tag('card_example.svg', class: "avatar")%>
             <span class="card_first_title"> Price </span>
-            <span class="card_first_desc"> 100$ </span>
+            <span class="card_first_desc"> <%= flight.price %> €</span>
             <span class="card_first_title"> Dates </span>
-            <span class="card_first_desc"> 24/04 - 28/04 </span>
+            <span class="card_first_desc"> <%= flight.departure_at.strftime("%d/%m") %> - <%= flight.arrival_at.strftime("%d/%m") %></span>
           </div>
           <div class="cardsecond">
             <div class="card_go">
-              <span class="card_second_hours">11:30 AM </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours">12:50 PM </span><br>
-              <span class="air_departure">SFO </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure">NYC</span>
+              <span class="card_second_hours"><%= flight.departure_at.strftime("%I:%M%p") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= flight.arrival_at.strftime(" %I:%M%p") %> </span><br>
+              <span class="air_departure"><%= flight.departure.code %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.arrival.code %></span>
             </div>
             <div class="card_back">
               <span class="card_second_hours">17:30 AM </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours">18:50 PM </span><br>
-              <span class="air_departure">NYC </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure">SFO</span>
+              <span class="air_departure"><%= flight.arrival.code %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.departure.code %></span>
             </div>
-
           </div>
           <div class="cardthird">
             <%= image_tag('card_example.svg', class: "card_image")%>
