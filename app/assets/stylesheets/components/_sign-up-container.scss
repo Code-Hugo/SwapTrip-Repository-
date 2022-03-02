@@ -1,11 +1,25 @@
 
 .sign-up-container {
+    max-width: 700px; 
+    width: 100%;
+    margin-left: 250px;
+}
+.title{
+    margin-bottom: 30px;
+}
+.sign-up-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    flex: 1;
+    flex-wrap: wrap;
+    width: 550px;
+    justify-content: space-around;
 }
 
-.sign-up-form {
-    width: 450px;
+.form-inputs {
+    width: calc(100% / 2 -20px);
+}
+
+.form-inputs input{
+    height: 45px;
+    width: 100%;
 }
