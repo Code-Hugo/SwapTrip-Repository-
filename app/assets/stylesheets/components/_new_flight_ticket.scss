@@ -1,0 +1,12 @@
+.new_flight_ticket {
+  font-size: 15px;
+  margin-top: 40px;
+}
+
+[type="submit"]:not(:disabled) {
+  color: white;
+  background: #487dad;
+  padding: 10px 10px 10px 10px;
+  border: 2px dashed;
+  border-radius: 25px;
+}
