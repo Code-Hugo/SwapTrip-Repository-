@@ -34,6 +34,8 @@ class FlightTicketsController < ApplicationController
   end
 
   def update
+    @flight_ticket.update(ticket_params)
+    redirect_to flight_ticket_path(@flight_ticket)
   end
 
   private

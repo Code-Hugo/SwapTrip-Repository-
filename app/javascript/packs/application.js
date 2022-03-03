@@ -6,6 +6,7 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import "flatpickr/dist/flatpickr";
 import "channels"
 import {validateFlightTicket} from "../pages/flight_ticket_index"
 //import "../channels/validate"
@@ -14,6 +15,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import { initFlatpickr } from "../plugins/flatpickr";
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -27,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
   // Call your functions here, e.g:
   // initSelect2();
   validateFlightTicket();

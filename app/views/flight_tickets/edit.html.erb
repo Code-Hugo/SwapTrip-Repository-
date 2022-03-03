@@ -1,0 +1,64 @@
+<!-- Standard Headings -->
+<h1>Price Suggestion Algorithm</h1>
+
+
+<!-- Base type size -->
+<p>Basic Paragraph</p>
+
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Supplier Name</th>
+      <th>Market Price</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sky Scanner</td>
+      <td>350$</td>
+      <td>02/04/2022</td>
+    </tr>
+    <tr>
+      <td>Kayak</td>
+      <td>420$</td>
+      <td>02/04/2022</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Standard Headings -->
+<h1>Select My Own Price</h1>
+
+
+<!-- Base type size -->
+<p>Basic Paragraph</p>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Market Price</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*Price Input*</td>
+      <td>02/04/2022</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Standard buttons -->
+<label for="exampleMessage">Please accept SwapTrip's T&C</label>
+  <input type="checkbox" value="submit input">
+
+
+<!-- Primary buttons -->
+<%= simple_form_for(@flight_ticket) do |f| %>
+ <%= f.input :price %>
+  <%#input class="button-primary" id="price-verification" type="submit" value="List your offer"%>
+  <%= f.submit %>
+<% end %>
+
+<!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
