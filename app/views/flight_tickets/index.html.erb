@@ -55,11 +55,11 @@
           <div class="cardsecond">
             <div class="card_go">
               <span class="card_second_hours"><%= flight.departure_at.strftime("%I:%M%p") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= flight.arrival_at.strftime(" %I:%M%p") %> </span><br>
-              <span class="air_departure"><%= flight.departure.code %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.arrival.code %></span>
+              <span class="air_departure"><%= flight.departure.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.arrival.city %></span>
             </div>
             <div class="card_back">
               <span class="card_second_hours">17:30 AM </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours">18:50 PM </span><br>
-              <span class="air_departure"><%= flight.arrival.code %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.departure.code %></span>
+              <span class="air_departure"><%= flight.arrival.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.departure.city %></span>
             </div>
           </div>
           <div class="cardthird">
@@ -79,7 +79,7 @@
       <div class="form-fields">
       <p class="form-title">Flight ticket details</p>
         <input type="text" required placeholder="Passanger Full Name" class="label_inside form-control">
-        <input type="text" required placeholder="Booking Code" class="label_inside form-control">
+        <input type="text" required placeholder="Booking.code" class="label_inside form-control">
         <input type="text" required placeholder="Reservation Email" class="label_inside form-control">
         <input type="text" required placeholder="Flight Number" class="label_inside form-control">
       </div>
