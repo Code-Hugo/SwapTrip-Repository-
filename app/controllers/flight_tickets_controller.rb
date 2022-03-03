@@ -1,6 +1,6 @@
 class FlightTicketsController < ApplicationController
 
-  before_action :set_ticket, only:[:show]
+  before_action :set_ticket, only:[:show, :edit]
 
   def index
     if params[:departure].present?
@@ -40,7 +40,7 @@ class FlightTicketsController < ApplicationController
 
   private
   def ticket_params
-    params.require(:flight_ticket).permit(:confirmation_id, :ticket_number, :airline_code, :flight_number, :price, :departure_id, :arrival_id, :departure_at, :arrival_at, :user_id)
+    params.require(:flight_ticket).permit(:confirmation_id, :ticket_number, :airline_code, :confirmation_code, :flight_number, :price, :departure_id, :arrival_id, :departure_at, :arrival_at, :user_id)
   end
 
   def set_ticket
