@@ -3,3 +3,69 @@
     font-size: 20px;
     color: #FDBC11;
 }
+
+.list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    padding: 20px;
+}
+
+.text-align {
+    text-align: left;
+}
+
+.card-info-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    padding: 20px;
+}
+
+.offers-purchases-layout {
+    display: flex;
+}
+
+.offers-layout {
+    flex: 1;
+    padding: 16px 24px;
+}
+.purchases-layout {
+    flex:1;
+    padding: 16px 24px;
+}
+.offer-card-info {
+    display: flex;
+    align-items: center;
+    .airport {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .date {
+        font-weight: bold;
+        margin: 0;
+    }
+    .time {
+        margin: 0;
+    }
+    hr {
+        flex: 1;
+        border-top: 2px dashed grey;
+        margin: 8px;
+    }
+}
+
+.offer-card {
+    padding: 16px 24px;
+    background-color: #F4F4F5;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ti-plane {
+    font-size: 20px;
+}
