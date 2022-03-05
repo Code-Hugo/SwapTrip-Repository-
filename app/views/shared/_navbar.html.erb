@@ -6,10 +6,7 @@
       <% end %>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary"><%= link_to "Home", flight_tickets_path %></a></li>
-        <li><a href="#" class="nav-link px-2 link-dark"><%= link_to "Flight Form", new_flight_ticket_path %></a></li>
         <% if user_signed_in? %>
-        <li><a href="/my_dashboard" class="nav-link px-2 link-dark"> <%= link_to "My Dashboard", my_dashboard_path %></li>
         <% end %>
         <li><a href="#" class="nav-link px-2 link-dark">Support</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">About Us</a></li>
