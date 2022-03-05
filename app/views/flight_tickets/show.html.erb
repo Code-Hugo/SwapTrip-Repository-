@@ -1,1 +1,33 @@
-<h1> here is show page </h1>
+<h1> Verification in process! </h1>
+
+<!-- Base type size -->
+<div class="banner">
+  <div class="row">
+    <p>Your flight ticket form has been successffuly submitted for a review with SwapFlat.</p>
+    <p>Thank you for choosing us as your selected service.</p>
+  </div>
+  <div class="row">
+    <p>Our legal team will review your application and get back to you shortly. In the meantime the status will remain on “pending”.</p>
+    <p>As soon you application's status has changed to “approved” you tickets will be listed among other offers. </p>
+  </div>
+</div>
+
+<div class="card">
+  <p>The is where the "empty details" flight card will go</p>
+</div>
+
+<div class="row">
+  <p>(this goes to the right from the card - For Application Pending) Your application is currently pending a verification from our side. Please come later to check your status. </p>
+</div>
+<div class="row">
+  <a> >Check your status</a>
+  <%= link_to "Check your status", status_path(@flight_ticket) %>
+</div>
+
+
+<div class="row">
+  <p>(this goes to the right from the card - For Card Hidden) The details of your flight offer remain hidden for now. As soon as your application is approved, we will show your offer! </p>
+</div>
+<div class="row">
+  <a> Take me to my profile</a>
+</div>
