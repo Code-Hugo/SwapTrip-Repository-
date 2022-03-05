@@ -6,10 +6,15 @@
       <% end %>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/flight_tickets" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="/flight_tickets/new" class="nav-link px-2 link-dark">Flight Form</a></li>
         <% if user_signed_in? %>
+        <li><a href="/my_dashboard" class="nav-link px-2 link-dark">My Dashboard</a></li>
+          <% else %>
+        <li><a href="/users/sign_in" class="nav-link px-2 link-dark">My Dashboard</a></li>
         <% end %>
-        <li><a href="#" class="nav-link px-2 link-dark">Support</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">About Us</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">About us</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Contact</a></li>
       </ul>
 
       <div class="buttons col-md-3 text-end">
