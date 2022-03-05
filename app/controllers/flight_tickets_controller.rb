@@ -1,6 +1,6 @@
 class FlightTicketsController < ApplicationController
 
-  before_action :set_ticket, only:[:show, :edit]
+  before_action :set_ticket, only:[:show, :edit, :update, :status]
 
   def index
     if params[:departure].present?
@@ -36,6 +36,10 @@ class FlightTicketsController < ApplicationController
   def update
     @flight_ticket.update(ticket_params)
     redirect_to flight_ticket_path(@flight_ticket)
+  end
+
+  def status
+
   end
 
   private
