@@ -1,3 +1,14 @@
+<div class="container">
+  <div class="banner">
+    <div class="row">
+      <p>Departure<%= @flight_ticket.departure.code %></p>
+    </div>
+    <div class="row">
+      <p>Arrival<%= @flight_ticket.arrival.code %></p>
+    </div>
+  </div>
+</div>
+
 <!-- Standard Headings -->
 <h1>Price Suggestion Algorithm</h1>
 
@@ -11,19 +22,32 @@
     <tr>
       <th>Supplier Name</th>
       <th>Market Price</th>
-      <th>Date</th>
+      <th>Departure Date</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Sky Scanner</td>
-      <td>350$</td>
-      <td>02/04/2022</td>
+      <td>Kiwi</td>
+      <%= simple_form_for @flight_ticket do |f| %>
+        <%= f.radio_button :price, rand(150..270) %>
+        <td><%= @flight_ticket.departure_at %></td>
+        <%= f.submit "Select Kiwi" %>
+      <% end %>
     </tr>
     <tr>
-      <td>Kayak</td>
-      <td>420$</td>
-      <td>02/04/2022</td>
+      <td>SkyScanner</td>
+      <%= simple_form_for @flight_ticket do |f| %>
+        <%= f.radio_button :price, rand(150..270) %>
+        <td><%= @flight_ticket.departure_at %></td>
+        <%= f.submit "Select SkyScanner" %>
+      <% end %>
+    <tr>
+     <td>Kayak</td>
+      <%= simple_form_for @flight_ticket do |f| %>
+        <%= f.radio_button :price, rand(150..270) %>
+        <td><%= @flight_ticket.departure_at %></td>
+        <%= f.submit "Select Kayak" %>
+      <% end %>
     </tr>
   </tbody>
 </table>
@@ -38,13 +62,13 @@
   <thead>
     <tr>
       <th>Market Price</th>
-      <th>Date</th>
+      <th>Departue Date & Time</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>*Price Input*</td>
-      <td>02/04/2022</td>
+      <td><%= @flight_ticket.departure_at %></td>
     </tr>
   </tbody>
 </table>
