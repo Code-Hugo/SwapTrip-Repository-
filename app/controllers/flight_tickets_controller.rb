@@ -1,11 +1,38 @@
 class FlightTicketsController < ApplicationController
-
-  before_action :set_ticket, only:[:show, :edit, :update, :status]
+before_action :set_ticket, only:[:show, :edit, :update, :status]
 
   def index
-    if params[:departure].present?
+    if params[:departure].present? && params[:arrival].present? && params[:departure_at].present? && params[:arrival_at].present?
+      @departure = Airport.find_by_city(params[:departure].capitalize)
+      @arrival = Airport.find_by_city(params[:arrival].capitalize)
+      @departure_at = DateTime.parse(params[:departure_at])..DateTime.parse(params[:departure_at]) + 24.hour
+      @arrival_at = DateTime.parse(params[:arrival_at])..DateTime.parse(params[:arrival_at]) + 24.hour
+      @flight_tickets = FlightTicket.where(departure: @departure, arrival: @arrival, departure_at: @departure_at, arrival_at: @arrival_at)
+    elsif params[:departure].present? && params[:arrival].present?
+      @departure = Airport.find_by_city(params[:departure].capitalize)
+      @arrival = Airport.find_by_city(params[:arrival].capitalize)
+      @flight_tickets = FlightTicket.where(departure: @departure, arrival: @arrival)
+    elsif params[:departure].present? && params[:departure_at].present?
+      @departure = Airport.find_by_city(params[:departure].capitalize)
+      @departure_at = DateTime.parse(params[:departure_at])..DateTime.parse(params[:departure_at]) + 24.hour
+      @flight_tickets = FlightTicket.where(departure: @departure, departure_at: @departure_at)
+    elsif params[:departure].present? && params[:arrival].present? && params[:departure_at].present?
+      @departure = Airport.find_by_city(params[:departure].capitalize)
+      @arrival = Airport.find_by_city(params[:arrival].capitalize)
+      @departure_at = DateTime.parse(params[:departure_at])..DateTime.parse(params[:departure_at]) + 24.hour
+      @flight_tickets = FlightTicket.where(departure: @departure, arrival: @arrival, departure_at: @departure_at)
+    elsif params[:departure].present?
       @departure = Airport.find_by_city(params[:departure].capitalize)
       @flight_tickets = FlightTicket.where(departure: @departure)
+    elsif params[:arrival].present?
+      @arrival = Airport.find_by_city(params[:arrival].capitalize)
+      @flight_tickets = FlightTicket.where(arrival: @arrival)
+    elsif params[:departure_at].present?
+      @departure_at = DateTime.parse(params[:departure_at])..DateTime.parse(params[:departure_at]) + 24.hour
+      @flight_tickets = FlightTicket.where(departure_at: @departure_at)
+    elsif params[:arrival_at].present?
+      @arrival_at = DateTime.parse(params[:arrival_at])..DateTime.parse(params[:arrival_at]) + 24.hour
+      @flight_tickets = FlightTicket.where(arrival_at: @arrival_at)
     else
       @flight_tickets = FlightTicket.all
     end
