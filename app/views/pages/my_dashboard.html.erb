@@ -50,24 +50,28 @@
     <div class = "offers-purchases-layout">
         <div class = "offers-layout">
             <h2>My Offers</h2>
-            <div class="offer-card">
-                <p>Barcelona to Rome</p>
-                <div class="offer-card-info">
-                    <div>
-                        <p class="date">19 apr</p>
-                        <p class="airport">BCN</p>
-                        <p class="time">07:19</p>
-                    </div>
-                   <hr>
-                   <i class="ti ti-plane"></i>
-                   <hr>
-                    <div>
-                        <p class="date">19 apr</p>
-                        <p class="airport">CAI</p>
-                        <p class="time">15:15</p>
+            <% @my_offers.each do |offer| %>
+                <div class="offer-card">
+                    <p> <%= offer.departure.city %> to <%= offer.arrival.city %></p>
+                    <div class="offer-card-info">
+                        <div>
+                            <p class="date"><%= offer.departure_at.strftime("%d/%m") %></p>
+                            <p class="airport"><%= offer.departure.code %></p>
+                            <p class="time"><%= offer.departure_at.strftime("%I:%M%p") %></p>
+                        </div>
+                    <hr>
+                    <i class="far fa-plane"></i>
+                    <hr>
+                        <div>
+                            <p class="date"><%= offer.arrival_at.strftime("%d/%m") %></p>
+                            <p class="airport"><%= offer.arrival.code %></p>
+                            <p class="time"><%= offer.arrival_at.strftime("%I:%M%p") %></p>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <hr>
+            <% end %>
+
         </div>
 
         <div class = "purchases-layout">
