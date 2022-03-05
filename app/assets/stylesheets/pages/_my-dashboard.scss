@@ -1,28 +1,26 @@
-.banner .dash-p {
-    text-align: left;
-    font-size: 20px;
-    color: #FDBC11;
-}
-
-.list-header {
+.main-box {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    color: white;
-    padding: 20px;
 }
-
-.text-align {
-    text-align: left;
-}
-
-.card-info-one {
+.personal-info-item {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: white;
-    padding: 20px;
+    align-items: center;
+    i {
+        margin-right: 8px;
+        color: #FDBC11;
+        
+    }
+    .label {
+        width: 150px;
+    }
+    p {
+        margin: 0;
+    }
 }
+
+
+
+
 
 .offers-purchases-layout {
     display: flex;
