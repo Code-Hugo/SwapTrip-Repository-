@@ -21,7 +21,13 @@ h2 {
     }
 }
 
-
+.destination-price {
+    display: flex;
+    justify-content: space-between;
+}
+.price {
+    font-weight: bold;
+}
 
 
 
