@@ -1,5 +1,5 @@
 class FlightTicketsController < ApplicationController
-before_action :set_ticket, only:[:show, :edit, :update, :status]
+  before_action :set_ticket, only: %i[show edit update status]
 
   def index
     if params[:departure].present? && params[:arrival].present? && params[:departure_at].present? && params[:arrival_at].present?
@@ -50,7 +50,7 @@ before_action :set_ticket, only:[:show, :edit, :update, :status]
   def create
     @flight_ticket = FlightTicket.new(ticket_params)
     @flight_ticket.user_id = current_user.id
-    if @flight_ticket.save!
+    if @flight_ticket.save
       redirect_to edit_flight_ticket_path(@flight_ticket)
     else
       render :new

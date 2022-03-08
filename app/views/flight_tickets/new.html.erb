@@ -8,11 +8,11 @@
           label: "*Flight number is alphanumerical code consisting of airline code 4 digits (VY850)"%>
         <%= f.input :confirmation_code,
           label: "*Alphanumerical code that appears in your flight confirmation (i.e. V3LKZ)" %>
-        <%= f.association :departure, label_method: :city, collection: @airports,
+        <%= f.association :departure, label_method: :city, collection: Airport.order(:city),
           label: "*Departure destination of your flight (city name)" %>
         <%= f.input :departure_at, as: :string, required: false, input_html: {class: "datepicker"},
           label: "*Departure" %>
-        <%= f.association :arrival, label_method: :city, collection: @airports,
+        <%= f.association :arrival, label_method: :city, collection: Airport.order(:city),
           label: "*Arrival destination of your flight (city name)" %>
         <%= f.input :arrival_at, as: :string, required: false, input_html: {class: "datepicker"},
            label: "*Arrival" %>
