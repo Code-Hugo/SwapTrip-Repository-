@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "flatpickr/dist/flatpickr";
 import "channels"
-import {validateFlightTicket} from "../pages/flight_ticket_index"
 //import "../channels/validate"
 
 Rails.start()
@@ -26,6 +25,8 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import "bootstrap";
 
 // Internal imports, e.g:
+import { validateFlightTicket } from "../pages/flight_ticket_index"
+import { editPriceFlightTicket } from "../pages/flight_ticket_edit";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -33,4 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   validateFlightTicket();
+  editPriceFlightTicket();
 });

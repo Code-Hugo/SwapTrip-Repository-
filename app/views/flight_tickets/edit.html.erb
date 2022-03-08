@@ -29,24 +29,24 @@
     <tr>
       <td>Kiwi</td>
       <%= simple_form_for @flight_ticket do |f| %>
-        <%= f.radio_button :price, rand(150..270) %>
+        <%= f.radio_button :price, price = rand(180..230), id: "kiwi-radio" %>
         <td><%= @flight_ticket.departure_at %></td>
-        <%= f.submit "Select Kiwi" %>
+        <td id="kiwi-price"><%= price %></td>
       <% end %>
     </tr>
     <tr>
       <td>SkyScanner</td>
       <%= simple_form_for @flight_ticket do |f| %>
-        <%= f.radio_button :price, rand(150..270) %>
+        <%= f.radio_button :price, price = rand(180..230), id: "skyscanner-radio" %>
         <td><%= @flight_ticket.departure_at %></td>
-        <%= f.submit "Select SkyScanner" %>
+        <td id="skyscanner-price"><%= price %></td>
       <% end %>
     <tr>
      <td>Kayak</td>
       <%= simple_form_for @flight_ticket do |f| %>
-        <%= f.radio_button :price, rand(150..270) %>
+        <%= f.radio_button :price, price = rand(180..230), id: "kayak-radio" %>
         <td><%= @flight_ticket.departure_at %></td>
-        <%= f.submit "Select Kayak" %>
+        <td id="kayak-price"><%= price %></td>
       <% end %>
     </tr>
   </tbody>
@@ -80,7 +80,7 @@
 
 <!-- Primary buttons -->
 <%= simple_form_for(@flight_ticket) do |f| %>
- <%= f.input :price %>
+ <%= f.input :price, input_html: {id: "price-input" } %>
   <%#input class="button-primary" id="price-verification" type="submit" value="List your offer"%>
   <%= f.submit %>
 <% end %>
