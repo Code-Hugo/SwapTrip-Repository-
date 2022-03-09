@@ -25,15 +25,15 @@
     
     <div class="buy">
       <div class="destinations">
-        <h3><%= @flight_ticket.departure.city %> to <%= @flight_ticket.arrival.city %></h3>
+        <h3><strong><%= @flight_ticket.departure.city %></strong> <small>to </small><strong><%= @flight_ticket.arrival.city %></strong></h3>
       </div>
       
       <div class="flight-price">
         <p>price <%= @flight_ticket.price %> €</p>
       </div>
       
-      <div class="Buy-btn">
-        <button>Buy</button>
+      <div>
+        <button type="submit" class="Buy-btn">Buy Now</button>
       </div>
     
     </div>
