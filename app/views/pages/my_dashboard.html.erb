@@ -52,7 +52,10 @@
             <h2>My Offers</h2>
             <% @my_offers.each do |offer| %>
                 <div class="offer-card">
-                    <p> <%= offer.departure.city %> to <%= offer.arrival.city %></p>
+                    <div class="destination-price">
+                        <p> <%= offer.departure.city %> to <%= offer.arrival.city %></p>
+                        <p class="price">Price #<%= offer.price %></p>
+                    </div>
                     <div class="offer-card-info">
                         <div>
                             <p class="date"><%= offer.departure_at.strftime("%d/%m") %></p>
