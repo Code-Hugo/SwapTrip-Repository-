@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="buying-process">
+    <div class="card">
+        <div class="cardfirst">
+          <%= image_tag('card_example.svg', class: "avatar")%>
+          <span class="card_first_title"> Price </span>
+          <span class="card_first_desc"> <%= @flight_ticket.price %> €</span>
+          <span class="card_first_title"> Dates </span>
+          <span class="card_first_desc"> <%= @flight_ticket.departure_at.strftime("%d/%m") %> - <%= @flight_ticket.arrival_at.strftime("%d/%m") %></span>
+        </div>
+        <div class="cardsecond">
+          <div class="card_go">
+            <span class="card_second_hours"><%= @flight_ticket.departure_at.strftime("%I:%M%p") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= @flight_ticket.arrival_at.strftime(" %I:%M%p") %> </span><br>
+            <span class="air_departure"><%= @flight_ticket.departure.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.arrival.city %></span>
+          </div>
+          <div class="card_back">
+            <span class="card_second_hours">17:30 AM </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours">18:50 PM </span><br>
+            <span class="air_departure"><%= @flight_ticket.arrival.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.departure.city %></span>
+          </div>
+        </div>
+        <div class="cardthird">
+          <%= image_tag('card_example.svg', class: "card_image")%>
+        </div>
+    </div>
+    
+    <div class="buy">
+      <div class="destinations">
+        <h3><strong><%= @flight_ticket.departure.city %></strong> <small>to </small><strong><%= @flight_ticket.arrival.city %></strong></h3>
+      </div>
+      
+      <div class="flight-price">
+        <p>price <%= @flight_ticket.price %> €</p>
+      </div>
+      
+      <div>
+        <%= link_to "Book Now", my_dashboard_path, class: "btn btn-warning my-3" %>
+        <%# <button type="submit" class="Buy-btn">Buy Now</button> %>
+      </div>
+    
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.buying-process {
+    display: flex;
+    justify-content: space-around;
+    //border: 1px solid black;
+}
+.buy {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    align-items: center;
+    color: #487DAD;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.buy p {
+    margin-bottom: 40px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.buy h3 {
+    margin-bottom: 40px;
+}
+
+.Buy-btn {
+    background-color: #487DAD;
+    padding: 24px 16px;
+    border-radius: 8px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
