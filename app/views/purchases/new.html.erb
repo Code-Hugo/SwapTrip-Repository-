@@ -22,21 +22,21 @@
           <%= image_tag('card_example.svg', class: "card_image")%>
         </div>
     </div>
-    
+
     <div class="buy">
       <div class="destinations">
         <h3><strong><%= @flight_ticket.departure.city %></strong> <small>to </small><strong><%= @flight_ticket.arrival.city %></strong></h3>
       </div>
-      
+
       <div class="flight-price">
         <p>price <%= @flight_ticket.price %> €</p>
       </div>
-      
+
       <div>
-        <%= link_to "Book Now", my_dashboard_path, class: "btn btn-warning my-3" %>
+        <%= link_to "Book Now", flight_ticket_purchases_path(@flight_ticket, user_id: @user), method: "post",  class: "btn btn-warning my-3" %>
         <%# <button type="submit" class="Buy-btn">Buy Now</button> %>
       </div>
-    
+
     </div>
   </div>
 </div>
