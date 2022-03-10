@@ -50,11 +50,13 @@
     <div class = "offers-purchases-layout">
         <div class = "offers-layout">
             <h2>My Offers</h2>
+
             <% @my_offers.each do |offer| %>
                 <div class="offer-card">
                     <div class="destination-price">
                         <p> <%= offer.departure.city %> to <%= offer.arrival.city %></p>
-                        <p class="price">Price €<%= offer.price %></p>
+
+                        <p class="price">Price € <%= offer.price %></p>
                     </div>
                     <div class="offer-card-info">
                         <div>
@@ -79,6 +81,31 @@
 
         <div class = "purchases-layout">
             <h2>My Purchases</h2>
+
+            <% @my_purchases.each do |purchase| %>
+                <div class="offer-card">
+                    <div class="destination-price">
+                        <p> <%= purchase.flight_ticket.departure.city %> to <%= purchase.flight_ticket.arrival.city %></p>
+                        <p class="price">Price € <%= purchase.flight_ticket.price %></p>
+                    </div>
+                    <div class="offer-card-info">
+                        <div>
+                            <p class="date"><%= purchase.flight_ticket.departure_at.strftime("%d/%m") %></p>
+                            <p class="airport"><%= purchase.flight_ticket.departure.code %></p>
+                            <p class="time"><%= purchase.flight_ticket.departure_at.strftime("%I:%M%p") %></p>
+                        </div>
+                    <hr>
+                    <p><i class="fas fa-plane-alt"></i></p>
+                    <hr>
+                        <div>
+                            <p class="date"><%= purchase.flight_ticket.arrival_at.strftime("%d/%m") %></p>
+                            <p class="airport"><%= purchase.flight_ticket.arrival.code %></p>
+                            <p class="time"><%= purchase.flight_ticket.arrival_at.strftime("%I:%M%p") %></p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            <% end %>
         </div>
     </div>
 </div>
