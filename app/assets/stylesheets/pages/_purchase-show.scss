@@ -1,0 +1,23 @@
+.displaying-card-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 0%;
+}
+
+.displaying-card {
+    flex: 1;
+}
+
+.displaying-info {
+    flex: 1;
+}
+.info-purch-items {
+    display: flex;
+    justify-content: space-between;
+
+    i {
+        margin-right: 8px;
+        color: #FDBC11;
+    }
+}
