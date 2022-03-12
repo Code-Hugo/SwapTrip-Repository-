@@ -1,0 +1,35 @@
+.purchase {
+    width: 70%;
+}
+.displaying-card-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 0%;
+}
+
+.displaying-card {
+    flex: 1;
+}
+
+.displaying-info {
+    flex: 1;
+    color: #487DAD;
+}
+.info-purch-items {
+    display: flex;
+    justify-content: space-between;
+
+    i {
+        font-size: 45px;
+        padding: 16px;
+        margin: 8px 16px;
+        color: #FDBC11;
+    }
+}
+
+.info-purch-items h3 {
+    font-weight: lighter;
+    font-size: 20px;
+    padding: 30px;
+} 

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :flight_tickets, only:[:index, :show, :new, :create, :edit, :update] do
     resources :purchases, only: [ :create, :new ]
   end
+  resources :purchases , only: [:show]
   get "status/:id", to: "flight_tickets#status", as: :status
 
 
