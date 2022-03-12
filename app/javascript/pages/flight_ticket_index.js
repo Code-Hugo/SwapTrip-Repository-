@@ -11,4 +11,18 @@ const validateFlightTicket =() =>{
     }
 }
 
+const validateUser = () => {
+
+  const flightCard = document.querySelectorAll(".card")
+  if (flightCard) {
+    flightCard.forEach((card)=> {
+      card.addEventListener("click", (e) => {
+        console.log(e)
+        const popup = document.getElementById('user-validation')
+        popup.style.display="block";
+      })
+    })
+  }
+}
 export {validateFlightTicket}
+export {validateUser}

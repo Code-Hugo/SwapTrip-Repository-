@@ -26,7 +26,8 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { validateFlightTicket } from "../pages/flight_ticket_index"
-import { editPriceFlightTicket } from "../pages/flight_ticket_edit";
+import { editPriceFlightTicket } from "../pages/flight_ticket_edit"
+import { validateUser } from "../pages/flight_ticket_index";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   validateFlightTicket();
   editPriceFlightTicket();
+  validateUser();
 });

@@ -2,22 +2,47 @@
   <div class="container">
     <div class="form-wrapper" style="width: 900px; margin: 0 auto;">
       <%= simple_form_for(@flight_ticket) do |f| %>
+        <a title="Thirteen digit code appearing on your flight confirmation email">
         <%= f.input :ticket_number,
-          label: "*Thirteen digit code appearing on your flight confirmation email"%>
+          label: "Ticket number",
+          placeholder: "E.g. 1258745896524" %>
+          </a>
+        <a title="Flight number is alphanumerical code consisting of airline code 4 digits">
         <%= f.input :flight_number,
-          label: "*Flight number is alphanumerical code consisting of airline code 4 digits (VY850)"%>
+          label: "Flight number",
+          placeholder: "E.g. VY850"
+          %>
+        </a>
+        <a title="Alphanumerical code that appears in your flight confirmation">
         <%= f.input :confirmation_code,
-          label: "*Alphanumerical code that appears in your flight confirmation (i.e. V3LKZ)" %>
+          label: "Confirmation code",
+          placeholder: "E.g. V3LKZ"%>
+        </a>
+        <a title="Departure destination of your flight">
         <%= f.association :departure, label_method: :city, collection: Airport.order(:city),
-          label: "*Departure destination of your flight (city name)" %>
+          label: "Departure city",
+          placeholder: "Departure"
+          %>
+        </a>
+        <a title="Departure date">
         <%= f.input :departure_at, as: :string, required: false, input_html: {class: "datepicker"},
-          label: "*Departure" %>
+          label: "Departure date",
+          placeholder: "Departure date" %>
+        </a>
+        <a title="Arrival destination of your flight">
         <%= f.association :arrival, label_method: :city, collection: Airport.order(:city),
-          label: "*Arrival destination of your flight (city name)" %>
+          label: "Arrival destination",
+          placeholder: "Arrival" %>
+        </a>
+        <a title="Arrival">
         <%= f.input :arrival_at, as: :string, required: false, input_html: {class: "datepicker"},
-           label: "*Arrival" %>
+           label: "Arrival",
+           placeholder: "Arrival date" %>
+        </a>
+        <a title="Airline code is first two characters from your flight number">
         <%= f.input :airline_code,
-           label: "*Airline code is first two characters from your flight number (i.e.VY)" %>
+           label: "Airline code",
+           placeholder: "E.g. VY" %>
         <%= f.submit %>
       <% end %>
     </div>

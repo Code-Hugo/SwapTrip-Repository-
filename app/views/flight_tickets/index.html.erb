@@ -43,8 +43,34 @@
 <div class="container-list">
   <div class="cards">
     <% @flight_tickets.each do |flight| %>
-      <%= link_to flight_tickets_path(flight) do %>
-      <div class="card">
+      <% unless current_user %>
+        <%= render partial: "signup_popup" %>
+        <div class="card">
+          <div class="cardfirst">
+            <%= image_tag('card_example.svg', class: "avatar")%>
+            <span class="card_first_title"> Price </span>
+            <span class="card_first_desc"> <%= flight.price %> €</span>
+            <span class="card_first_title"> Dates </span>
+            <span class="card_first_desc"> <%= flight.departure_at.strftime("%d/%m") %> - <%= flight.arrival_at.strftime("%d/%m") %></span>
+          </div>
+          <div class="cardsecond">
+            <p><%= "Flight from #{flight.departure.city} to #{flight.arrival.city}" %></p>
+            <div class="card_go">
+              <span class="card_second_hours"><%= flight.departure_at.strftime("%I:%M%p") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= flight.arrival_at.strftime(" %I:%M%p") %> </span><br>
+              <span class="air_departure"><%= flight.departure.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.arrival.city %></span>
+            </div>
+            <div class="card_back">
+              <span class="card_second_hours">17:30 AM </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours">18:50 PM </span><br>
+              <span class="air_departure"><%= flight.arrival.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.departure.city %></span>
+            </div>
+          </div>
+          <div class="cardthird">
+            <%= image_tag('card_example.svg', class: "card_image")%>
+          </div>
+        </div>
+      <% else %>
+      <%= link_to new_flight_ticket_purchase_path(flight) do %>
+        <div class="card">
           <div class="cardfirst">
             <%= image_tag('card_example.svg', class: "avatar")%>
             <span class="card_first_title"> Price </span>
@@ -65,14 +91,15 @@
           <div class="cardthird">
             <%= image_tag('card_example.svg', class: "card_image")%>
           </div>
-      </div>
+        </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
   <div class="form-container">
     <div class="form-home">
       <div class="form-header">
-        <h3 class="form-h3">Check if your flight ticket swappable!</h3>
+        <h3 class="form-h3">Check if your flight ticket is swappable!</h3>
         <%= image_tag('ticket.svg', class: "ticket-img-form")%>
         <%= image_tag('airlines.svg', class: "airlines-img-form")%>
       </div>
