@@ -1,27 +1,48 @@
-<h1> Congratulations! </h1>
-
-<!-- Base type size -->
-<div class="banner">
-  <div class="row">
-    <p>You have officially listed your flight with SwapFlat!We would like to thank you for your cooperation and service. Please find below the details of your offer.</p>
-  </div>
-</div>
-
-<div class="card">
-  <p>The is where the "FULL details" flight card will go</p>
-</div>
-
-<div class="row">
-  <p>(this goes to the right from the card - Application Approved) Your application Has been verified by our legal team.  </p>
-</div>
-
-<div class="row">
-  <p>(this goes to the right from the card - Card Visible) The card offer with your flights is now visible to all users and its open for shopping experience.  </p>
-</div>
-
-<div class="row">
-  <p>(this goes to the right from the card - Profile redirect) Want to know if you offer has been purchased?  </p>
-</div>
-<div class="row">
-  <%= link_to "Take me to my profile", my_dashboard_path(@user) %>
+<div class="container">
+    <div class="banner-bg">
+        <div class="banner">
+            <h2 class = "dash-p"> Congratulations!</h2>
+            <p>You have officially listed your flight with SwapFlat!</p>
+            <p> We would like to thank you for your cooperation and service. Please find below the details of your offer.</p>
+        </div>
+    </div>
+    <div class="displaying-card-info">
+        <div class ="displaying-card">
+            <div class="card">
+                <div class="cardfirst">
+                <%= image_tag('card_example.svg', class: "avatar")%>
+                <span class="card_first_title"> Price </span>
+                <span class="card_first_desc"> <%= @flight_ticket.price %> €</span>
+                <span class="card_first_title"> Dates </span>
+                <span class="card_first_desc"> <%= @flight_ticket.departure_at.strftime("%d/%m") %> - <%= @flight_ticket.arrival_at.strftime("%d/%m") %></span>
+                </div>
+                <div class="cardsecond">
+                <div class="card_go">
+                    <span class="card_second_hours"><%= @flight_ticket.departure_at.strftime("%I:%M%p") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= @flight_ticket.arrival_at.strftime(" %I:%M%p") %> </span><br>
+                    <span class="air_departure"><%= @flight_ticket.departure.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.arrival.city %></span>
+                </div>
+                <div class="card_back">
+                    <span class="card_second_hours">17:30 AM </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours">18:50 PM </span><br>
+                    <span class="air_departure"><%= @flight_ticket.arrival.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.departure.city %></span>
+                </div>
+                </div>
+                <div class="cardthird">
+                <%= image_tag('card_example.svg', class: "card_image")%>
+                </div>
+            </div>
+        </div>
+        <div class="displaying-info">
+            <div class="info-purch-items">
+                <i class="fas fa-check-circle"></i>
+                <h3>Your offer is now listed to other users. Please naviagate to your user profile to check the status of your offer. </h3>
+            </div>
+            <div class="info-purch-items">
+                <i class="fas fa-ticket-alt"></i>
+                <div>
+                    <h3>Want to know more information about your ticket</h3>
+                    <p> All your purchases and offers, <%= link_to "click here", my_dashboard_path %> </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
