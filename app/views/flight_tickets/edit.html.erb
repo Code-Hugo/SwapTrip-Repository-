@@ -1,65 +1,60 @@
-<div class="container">
-  <div class="banner">
+<div class="container_edit">
+  <div class="banner banner_edit">
     <div class="row">
-      <p>Departure<%= @flight_ticket.departure.code %></p>
+      <p>Departure <%= @flight_ticket.departure.code %></p>
     </div>
     <div class="row">
-      <p>Arrival<%= @flight_ticket.arrival.code %></p>
+      <p>Arrival <%= @flight_ticket.arrival.code %></p>
     </div>
   </div>
 </div>
-
+<div class="price_tables">
+<div class="price_sug">
 <!-- Standard Headings -->
-<h1>Price Suggestion Algorithm</h1>
-
-
-<!-- Base type size -->
-<p>Basic Paragraph</p>
-
+<h1 class="price_h1">Price Suggestion Algorithm</h1>
 
 <table class="u-full-width">
-  <thead>
+  <thead class="t_head">
     <tr>
+    <th></th>
       <th>Supplier Name</th>
-      <th>Market Price</th>
       <th>Departure Date</th>
+      <th>Market Price</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Kiwi</td>
       <%= simple_form_for @flight_ticket do |f| %>
-        <%= f.radio_button :price, price = rand(180..230), id: "kiwi-radio" %>
+        <td><%= f.radio_button :price, price = rand(180..230), id: "kiwi-radio" %></td>
+        <td>Kiwi</td>
         <td><%= @flight_ticket.departure_at %></td>
         <td id="kiwi-price"><%= price %></td>
       <% end %>
     </tr>
     <tr>
-      <td>SkyScanner</td>
       <%= simple_form_for @flight_ticket do |f| %>
-        <%= f.radio_button :price, price = rand(180..230), id: "skyscanner-radio" %>
+        <td><%= f.radio_button :price, price = rand(180..230), id: "skyscanner-radio" %></td>
+        <td>SkyScanner</td>
         <td><%= @flight_ticket.departure_at %></td>
         <td id="skyscanner-price"><%= price %></td>
       <% end %>
     <tr>
-     <td>Kayak</td>
       <%= simple_form_for @flight_ticket do |f| %>
-        <%= f.radio_button :price, price = rand(180..230), id: "kayak-radio" %>
+        <td><%= f.radio_button :price, price = rand(180..230), id: "kayak-radio" %></td>
+        <td>Kayak</td>
         <td><%= @flight_ticket.departure_at %></td>
         <td id="kayak-price"><%= price %></td>
       <% end %>
     </tr>
   </tbody>
 </table>
-
+</div>
+<div class="price_mine">
 <!-- Standard Headings -->
-<h1>Select My Own Price</h1>
+<h1 class="price_h1">Select My Own Price</h1>
 
-
-<!-- Base type size -->
-<p>Basic Paragraph</p>
-<table class="u-full-width">
-  <thead>
+<table class="u-full-width mine_table">
+  <thead class="t_head">
     <tr>
       <th>Market Price</th>
       <th>Departue Date & Time</th>
@@ -70,12 +65,15 @@
       <td>*Price Input*</td>
       <td><%= @flight_ticket.departure_at %></td>
     </tr>
+    <tr>
+      <td rowspan="3"><label for="exampleMessage">Please accept SwapTrip's T&C</label>
+      <input type="checkbox" value="submit input"></td>
+    </tr>
   </tbody>
 </table>
 
 <!-- Standard buttons -->
-<label for="exampleMessage">Please accept SwapTrip's T&C</label>
-  <input type="checkbox" value="submit input">
+
 
 
 <!-- Primary buttons -->
@@ -84,5 +82,6 @@
   <%#input class="button-primary" id="price-verification" type="submit" value="List your offer"%>
   <%= f.submit %>
 <% end %>
-
+</div>
+</div>
 <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
