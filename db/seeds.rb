@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+Purchase.destroy_all
 FlightTicket.destroy_all
 User.destroy_all
 Airport.destroy_all
@@ -76,8 +77,8 @@ airports << Airport.create!(
 )
 
 airports << Airport.create!(
-    code: "London Heathrow Airport",
-    city: "LHR"
+    code: "LHR",
+    city: "London Heathrow Airport"
 )
 
 airports << Airport.create!(
