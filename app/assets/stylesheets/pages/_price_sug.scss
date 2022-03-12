@@ -1,0 +1,65 @@
+.container_edit {
+  max-width: 100%;
+}
+
+.banner_edit {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 24px;
+    background-image: url(/assets/banner_bg-69bb4d0….png);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.price_tables {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  padding: 10px;
+  align-items: flex-start;
+}
+
+.price_sug {
+  width: 50%;
+}
+
+.price_mine {
+  width: 50%;
+}
+
+.u-full-width {
+  width: 90%;
+  height: 150px;
+  padding: 10px;
+}
+
+.mine_table {
+  height: 100px!important;
+}
+
+.t_head {
+  border-bottom: 1px solid #487dad;
+}
+
+.price_h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #487dad;
+  font-family: 'PT Sans Caption';
+  margin-bottom: 40px;
+}
+
+th {
+  color: #487dad;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: 'PT Sans Caption';
+}
+
+tr {
+  font-family: 'PT Sans Caption';
+}
