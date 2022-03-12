@@ -1,8 +1,9 @@
 
 const validateFlightTicket =() =>{
 
-    const validateBtn = document.getElementById("validate-btn")
+    const validateBtn = document.getElementById("validate-banana")
     const boxBtn = document.querySelector(".validate-bottom")
+    console.log(boxBtn)
     if (validateBtn) {
       validateBtn.addEventListener("click", (e) => {
         console.log(e);
