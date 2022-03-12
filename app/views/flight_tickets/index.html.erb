@@ -43,7 +43,7 @@
 <div class="container-list">
   <div class="cards">
     <% @flight_tickets.each do |flight| %>
-      <%= link_to flight_tickets_path(flight) do %>
+      <%= link_to new_flight_ticket_purchase_path(flight) do %>
       <div class="card">
           <div class="cardfirst">
             <%= image_tag('card_example.svg', class: "avatar")%>
