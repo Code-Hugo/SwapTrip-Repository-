@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
+    # before_action :store_user_location!
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
@@ -13,5 +14,9 @@ class ApplicationController < ActionController::Base
         new_flight_ticket_path
     end
 
-end
+    # private
 
+    # def store_user_location!
+    #   request.fullpath
+    # end
+end

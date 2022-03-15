@@ -2,7 +2,7 @@
     <div class="box">
         <h3>Please sign up or log in</h3>
         <p>In order to book this ticket you need to be logged in</p>
-        <div class="formButton" id="validate-btn"><%= link_to "sign up", new_user_registration_path %></div>
-        <div class="formButton" id="validate-btn"><%= link_to "log in", new_user_session_path %></div>
+        <div class="formButton" id="validate-btn"><%= link_to "sign up", new_user_registration_path(from_popup:true) %></div>
+        <div class="formButton" id="validate-btn"><%= link_to "log in", new_user_session_path(from_popup:true) %></div>
     </div>
 </div>
