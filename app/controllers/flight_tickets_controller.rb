@@ -66,7 +66,9 @@ class FlightTicketsController < ApplicationController
   end
 
   def status
-
+    @user = current_user
+    @flight_ticket = FlightTicket.find(params[:id])
+    @arrival = @flight_ticket.arrival
   end
 
   private

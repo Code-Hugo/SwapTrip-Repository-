@@ -11,6 +11,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
     @user = current_user
     @flight_ticket = FlightTicket.find(params[:flight_ticket_id])
+    @arrival = @flight_ticket.arrival
   end
 
   def create

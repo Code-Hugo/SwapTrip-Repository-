@@ -50,7 +50,8 @@
         <%= render partial: "signup_popup" %>
         <div class="card">
           <div class="cardfirst">
-            <%= image_tag('card_example.svg', class: "avatar")%>
+            <% arrival = Airport.find(flight.arrival_id)%>
+            <%#= image_tag(arrival.photo, class: "avatar")%>
             <span class="card_first_title"> Price </span>
             <span class="card_first_desc"> <%= flight.price %> €</span>
             <span class="card_first_title"> Dates </span>
@@ -68,14 +69,15 @@
             </div>
           </div>
           <div class="cardthird">
-            <%= image_tag('card_example.svg', class: "card_image")%>
+            <%= image_tag(arrival.photo, class: "card_image")%>
           </div>
         </div>
       <% else %>
       <%= link_to new_flight_ticket_purchase_path(flight) do %>
         <div class="card">
           <div class="cardfirst">
-            <%= image_tag('card_example.svg', class: "avatar")%>
+          <% arrival = Airport.find(flight.arrival_id)%>
+            <%#= image_tag(arrival.photo, class: "avatar")%>
             <span class="card_first_title"> Price </span>
             <span class="card_first_desc"> <%= flight.price %> €</span>
             <span class="card_first_title"> Dates </span>
@@ -92,7 +94,7 @@
             </div>
           </div>
           <div class="cardthird">
-            <%= image_tag('card_example.svg', class: "card_image")%>
+            <%= image_tag(arrival.photo, class: "card_image")%>
           </div>
         </div>
         <% end %>
