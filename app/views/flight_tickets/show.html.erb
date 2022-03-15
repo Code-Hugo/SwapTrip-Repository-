@@ -1,6 +1,62 @@
-<h1> Verification in process! </h1>
+<div class="container">
+  <div class="banner-bg">
+    <div class="banner">
+      <h2 class = "dash-p"> Verification in process!</h2>
+      <p>Your flight ticket form has been successffuly submitted for a review with SwapTrip</p>
+      <p>Thank you for choosing us as your selected service</p>
+      <p>Our legal team will review your application and get back to you shortly. In the meantime the status will remain on “pending”.</p>
+      <p>As soon you application's status has changed to “approved” you tickets will be listed among other offers. </p>
+    </div>
+  </div>
+    <div class="displaying-card-info">
+        <div class ="displaying-card">
+            <div class="card">
+                <div class="cardfirst">
+                <%# <%= image_tag('card_example.svg', class: "avatar")%>
+                <span class="card_first_title"> Price </span>
+                <span class="card_first_desc"> €€€</span>
+                <span class="card_first_title"> Dates </span>
+                <span class="card_first_desc"> <%= @flight_ticket.departure_at.strftime("From") %> - <%= @flight_ticket.arrival_at.strftime("To") %></span>
+                </div>
+                <div class="cardsecond">
+                <div class="card_go">
+                    <span class="card_second_hours"><%= @flight_ticket.departure_at.strftime("00:00") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= @flight_ticket.arrival_at.strftime("00:00") %> </span><br>
+                    <span class="air_departure"><%= @flight_ticket.departure.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.arrival.city %></span>
+                </div>
+                <div class="card_back">
+                    <span class="card_second_hours">00:00 </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours">00:00 </span><br>
+                    <span class="air_departure"><%= @flight_ticket.arrival.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.departure.city %></span>
+                </div>
+                </div>
+                <div class="cardthird">
+                <%= image_tag('card_example.svg', class: "card_image")%>
+                </div>
+            </div>
+        </div>
+        <div class="displaying-info">
+            <div class="info-purch-items">
+                <i class="fas fa-solid fa-lightbulb"></i>
+                <h3>Your application is currently pending a verification from our side. Please come later to check your status.</h3>
+            </div>
+            <div class="info-purch-items">
+                <i class="fas fa-solid fa-eye-slash"></i>
+                <div>
+                    <h3>The important details of your flight offer remain hidden for now. As soon as your application is approved, we will show your offer! To check stauts of the submitted flight, please  <%= link_to "click here.", status_path(@flight_ticket) %></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Base type size -->
+
+
+
+
+
+
+<%# <h1> Verification in process! </h1>
+
+
 <div class="banner">
   <div class="row">
     <p>Your flight ticket form has been successffuly submitted for a review with SwapFlat.</p>
@@ -22,7 +78,7 @@
 <div class="row">
   <a> >Check your status</a>
   <%= link_to "Check your status", status_path(@flight_ticket) %>
-</div>
+<%# </div>
 
 
 <div class="row">
@@ -30,4 +86,4 @@
 </div>
 <div class="row">
   <a> Take me to my profile</a>
-</div>
+</div> %>
