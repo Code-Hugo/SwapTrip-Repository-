@@ -21,99 +21,119 @@ airportsarrival = []
 
 airportsarrival << Airport.create!(
     code: "GZA",
-    city: "Gaza"
+    city: "Gaza",
+    photo: 'Gaza.jpg'
 )
 airports << Airport.create!(
   code: "CAG",
-  city: "Cagliari"
+  city: "Cagliari",
+  photo: 'Cagliari.jpg'
 )
 airports << Airport.create!(
   code: "BKF",
-  city: "Katmai National Park"
+  city: "Katmai National Park",
+  photo: 'Katmai.jpg'
 )
 
 airportsarrival << Airport.create!(
     code: "BGY",
-    city: "Bergamo"
+    city: "Bergamo",
+    photo: 'Bergamo.jpg'
 )
 airportsarrival << Airport.create!(
     code: "ANU",
-    city: "Antigua and Barbuda"
+    city: "Antigua and Barbuda",
+    photo: 'Antigua.jpg'
 )
 
 airports << Airport.create!(
   code: "AAL",
-  city: "Aalborg"
+  city: "Aalborg",
+  photo: 'aalborg.jpg'
 )
 
 airportsarrival << Airport.create!(
     code: "AAR",
-    city: "Aarhus"
+    city: "Aarhus",
+    photo: 'aarhus.jpg'
 )
 
 airports << Airport.create!(
-  code: "ABA",
-  city: "Abakan"
+  code: "DWC",
+  city: "Dubai",
+  photo: 'Dubai.jpg'
 )
 
 airportsarrival << Airport.create!(
-    code: "ABI",
-    city: "Abilene"
+    code: "HER",
+    city: "Crete",
+    photo: 'Crete.jpg'
 )
 
 airports << Airport.create!(
-  code: "ABQ",
-  city: "Alburquerque"
+  code: "KHH",
+  city: "Kaohsiung",
+  photo: 'Kaohsiung.jpg'
 )
 
 airports << Airport.create!(
     code: "BCN",
-    city: "Barcelona"
+    city: "Barcelona",
+    photo: 'Barcelona.jpg'
 )
 
 airports << Airport.create!(
     code: "TXL",
-    city: "Berlin"
+    city: "Berlin",
+    photo: 'Berlin.jpg'
 )
 
 airports << Airport.create!(
     code: "LHR",
-    city: "London Heathrow Airport"
+    city: "London Heathrow Airport",
+    photo: 'London.jpg'
 )
 
 airports << Airport.create!(
     code: "VIE",
-    city: "Vienna"
+    city: "Vienna",
+    photo: 'Vienna.jpg'
 )
 
 airports << Airport.create!(
     code: "GIG",
-    city: "Rio de Janeiro"
+    city: "Rio de Janeiro",
+    photo: 'Rio.jpg'
 )
 
 airportsarrival << Airport.create!(
     code: "PKX",
-    city: "Beijing Daxing "
+    city: "Beijing Daxing",
+    photo: 'Beijing.jpg'
 )
 
 airports << Airport.create!(
     code: "CAI",
-    city: "Cairo"
+    city: "Cairo",
+    photo: 'Cairo.jpg'
 )
 
 airports << Airport.create!(
-    code: "CNS",
-    city: "Cairns"
+    code: "SYD",
+    city: "Sydney",
+    photo: 'Sydney.jpg'
 )
 
 airportsarrival << Airport.create!(
     code: "BLQ",
-    city: "Bologna"
+    city: "Bologna",
+    photo: 'Bologna.jpg'
 )
 
 airportsarrival << Airport.create!(
     code: "IST",
-    city: "Istanbul"
+    city: "Istanbul",
+    photo: 'Istanbul.jpg'
 )
 
 faker_time = Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 200, format: :long)
