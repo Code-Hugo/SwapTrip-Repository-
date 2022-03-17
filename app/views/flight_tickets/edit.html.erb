@@ -25,7 +25,7 @@
   <tbody>
     <tr>
       <%= simple_form_for @flight_ticket do |f| %>
-        <td><%= f.radio_button :price, price = rand(180..230), id: "kiwi-radio" %></td>
+        <td><%= f.radio_button :price, price = rand(300..500), id: "kiwi-radio" %></td>
         <td>Kiwi</td>
         <td><%= @flight_ticket.departure_at %></td>
         <td id="kiwi-price"><%= price %></td>
@@ -33,14 +33,14 @@
     </tr>
     <tr>
       <%= simple_form_for @flight_ticket do |f| %>
-        <td><%= f.radio_button :price, price = rand(180..230), id: "skyscanner-radio" %></td>
+        <td><%= f.radio_button :price, price = rand(300..500), id: "skyscanner-radio" %></td>
         <td>SkyScanner</td>
         <td><%= @flight_ticket.departure_at %></td>
         <td id="skyscanner-price"><%= price %></td>
       <% end %>
     <tr>
       <%= simple_form_for @flight_ticket do |f| %>
-        <td><%= f.radio_button :price, price = rand(180..230), id: "kayak-radio" %></td>
+        <td><%= f.radio_button :price, price = rand(300..500), id: "kayak-radio" %></td>
         <td>Kayak</td>
         <td><%= @flight_ticket.departure_at %></td>
         <td id="kayak-price"><%= price %></td>

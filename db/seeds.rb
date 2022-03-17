@@ -139,6 +139,8 @@ airportsarrival << Airport.create!(
 faker_time = Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 200, format: :long)
 b = DateTime.parse faker_time
 User.create!(email: "marc@yahoo.com", password: "123456")
+User.create!(email: "tobi@gmail.com", password: "123456", Fullname: "Tobiasz Golian", username: "Tobgol", address: "Barcelona")
+
 new_flight = []
 50.times do
   new_flight << FlightTicket.new(
