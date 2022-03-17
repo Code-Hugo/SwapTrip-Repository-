@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:Fullname, :address, :username])
   end
 
+  def default_url_options
+  { host: ENV["www.swaptrip.herokuapp.com/"] || "localhost:3000" }
+  end
+
     def after_sign_in_path_for(user)
         new_flight_ticket_path
     end
