@@ -1,4 +1,5 @@
 <div class="banner">
+  <h1 style="text-align: center; margin-top: 35px; font-size: 40px;">Sell and buy flight tickets with SwapTrip!</h1>
   <div class="wrapper bg-white">
     <%= form_tag flight_tickets_path, method: :get do %>
       <div class="form-group d-sm-flex margin">
@@ -53,7 +54,7 @@
         <div class="card">
           <div class="cardfirst">
             <% arrival = Airport.find(flight.arrival_id)%>
-            <%= image_tag(arrival.photo, class: "avatar")%>
+            <%#= image_tag(arrival.photo, class: "avatar")%>
             <span class="card_first_title"> Price </span>
             <span class="card_first_desc"> <%= flight.price %> €</span>
             <span class="card_first_title"> Dates </span>
@@ -86,7 +87,7 @@
             <span class="card_first_desc"> <%= flight.departure_at.strftime("%d/%m") %> - <%= flight.arrival_at.strftime("%d/%m") %></span>
           </div>
           <div class="cardsecond">
-          <p class="card_desc"><%= "Flight from #{flight.departure.city} to #{flight.arrival.city}" %></p>
+            <p class="card_desc"><%= "Flight from #{flight.departure.city} to #{flight.arrival.city}" %></p>
             <div class="card_go">
               <span class="card_second_hours"><%= flight.departure_at.strftime("%I:%M%p") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= flight.arrival_at.strftime(" %I:%M%p") %> </span><br>
               <span class="air_departure"><%= flight.departure.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= flight.arrival.city %></span>
@@ -97,7 +98,7 @@
             </div>
           </div>
           <div class="cardthird">
-            <%#= image_tag(arrival.photo, class: "card_image")%>
+            <%= image_tag(arrival.photo, class: "card_image")%>
           </div>
         </div>
         <% end %>
