@@ -43,7 +43,11 @@
   </div>
 </div>
 <div class="container">
-  <h1 class="all-offers">All Flight Offers</h1>
+  <% if params[:departure].present? %>
+  <h1 class="all-offers">Flights from <%= params[:departure] %> </h1>
+  <% else %>
+  <h1 class="all-offers">Latest flight offers </h1>
+  <% end %>
 </div>
 <div class="container-list">
   <div class="cards">
@@ -115,7 +119,7 @@
       <div class="form-fields">
       <p class="form-title">Flight ticket details</p>
         <input type="text" required placeholder="Passanger Full Name" class="label_inside form-control">
-        <input type="text" required placeholder="Booking.code" class="label_inside form-control">
+        <input type="text" required placeholder="Booking Code" class="label_inside form-control">
         <input type="text" required placeholder="Reservation Email" class="label_inside form-control">
         <input type="text" required placeholder="Flight Number" class="label_inside form-control">
       </div>
