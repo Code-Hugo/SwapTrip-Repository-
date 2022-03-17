@@ -52,7 +52,7 @@
         <div class="card">
           <div class="cardfirst">
             <% arrival = Airport.find(flight.arrival_id)%>
-            <%#= image_tag(arrival.photo, class: "avatar")%>
+            <%= image_tag(arrival.photo, class: "avatar")%>
             <span class="card_first_title"> Price </span>
             <span class="card_first_desc"> <%= flight.price %> €</span>
             <span class="card_first_title"> Dates </span>
@@ -95,7 +95,7 @@
             </div>
           </div>
           <div class="cardthird">
-            <%= image_tag(arrival.photo, class: "card_image")%>
+            <%#= image_tag(arrival.photo, class: "card_image")%>
           </div>
         </div>
         <% end %>
