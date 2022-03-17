@@ -18,7 +18,7 @@
 }
 .info-purch-items {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 
     i {
         font-size: 45px;
@@ -33,3 +33,11 @@
     font-size: 20px;
     padding: 30px;
 } 
+
+.info-purchase {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}

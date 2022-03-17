@@ -1,5 +1,8 @@
 .form-container {
   max-width: fit-content;
+  color: #487dad;
+  border: 2px solid #487dad;
+  border-radius: 25px;
 }
 
 .form-home {
@@ -15,6 +18,8 @@
 
 .ticket-img-form {
   float: right;
+  color: #487dad;
+  filter: drop-shadow(2px 4px 6px #487dad);
 }
 
 .airlines-img-form {
@@ -27,7 +32,7 @@
 
 .form-title {
   text-transform: uppercase;
-  color: white;
+  color: #487dad;
 }
 
 .form-fields .label_inside {
@@ -39,7 +44,7 @@
 }
 
 .form-h3 {
-  color: white;
+  color: #487dad;
   font-weight: 600;
 }
 
