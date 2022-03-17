@@ -140,6 +140,7 @@ faker_time = Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 200,
 b = DateTime.parse faker_time
 User.create!(email: "marc@yahoo.com", password: "123456")
 User.create!(email: "tobi@gmail.com", password: "123456", Fullname: "Tobiasz Golian", username: "Tobgol", address: "Barcelona")
+User.create!(email: "hugo@yahoo.com", password: "123456")
 
 new_flight = []
 50.times do

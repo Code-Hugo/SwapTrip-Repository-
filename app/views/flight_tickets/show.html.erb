@@ -14,22 +14,23 @@
                 <div class="cardfirst">
                 <%# <%= image_tag('card_example.svg', class: "avatar")%>
                 <span class="card_first_title"> Price </span>
-                <span class="card_first_desc"> €€€</span>
+                <span class="card_first_desc"> <%= @flight_ticket.price %>€</span>
                 <span class="card_first_title"> Dates </span>
-                <span class="card_first_desc"> <%= @flight_ticket.departure_at.strftime("From") %> - <%= @flight_ticket.arrival_at.strftime("To") %></span>
+                <span class="card_first_desc"> <%= @flight_ticket.departure_at.strftime("%d/%m") %> - <%= @flight_ticket.arrival_at.strftime("%d/%m") %></span>
                 </div>
                 <div class="cardsecond">
                 <div class="card_go">
-                    <span class="card_second_hours"><%= @flight_ticket.departure_at.strftime("00:00") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= @flight_ticket.arrival_at.strftime("00:00") %> </span><br>
+                    <span class="card_second_hours"><%= @flight_ticket.departure_at.strftime("%I:%M%p") %> </span><%= image_tag('departure.svg', :class => "deparr")%> <span class="card_second_hours"><%= @flight_ticket.arrival_at.strftime("%I:%M%p") %> </span><br>
                     <span class="air_departure"><%= @flight_ticket.departure.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.arrival.city %></span>
                 </div>
                 <div class="card_back">
-                    <span class="card_second_hours">00:00 </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours">00:00 </span><br>
+                    <span class="card_second_hours"><%= @flight_ticket.arrival_at.strftime("%I:%M%p") %> </span><%= image_tag('arrival.svg', :class => "deparr")%> <span class="card_second_hours"><%= @flight_ticket.departure_at.strftime("%I:%M%p") %> </span><br>
                     <span class="air_departure"><%= @flight_ticket.arrival.city %> </span><%= image_tag('dots.svg', :class => "deparr")%> <span class="air_departure"><%= @flight_ticket.departure.city %></span>
                 </div>
                 </div>
+                <% arrival = Airport.find(@flight_ticket.arrival_id)%>
                 <div class="cardthird">
-                <%= image_tag('card_example.svg', class: "card_image")%>
+                <%= image_tag(arrival.photo, class: "card_image")%>
                 </div>
             </div>
         </div>
