@@ -1,0 +1,5 @@
+meta_product_name: "SwapTrip"
+meta_title: "SwapTrip - The way to resell your trip"
+meta_description: "Reselling already purchased trips for reasonable price, without hassle."
+meta_image: "banner_bg.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
