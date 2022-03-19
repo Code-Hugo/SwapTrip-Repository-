@@ -6,7 +6,7 @@
 }
 .buy {
     border: 1px solid black;
-    border-radius: 8px;
+    border-radius: 25px;
     padding: 32px;
     text-align: center;
     align-items: center;
@@ -17,6 +17,9 @@
     margin-bottom: 40px;
     font-size: larger;
     font-weight: bold;
+}
+.flight-price {
+    font-size: 25px;
 }
 
 .buy h3 {
@@ -31,3 +34,17 @@
     font-size: large;
     font-weight: bold;
 }
+.card-purchase {
+    background-color: #487dad;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 280px;
+    width: 670px;
+    border-radius: 25px;
+    border: 1px solid #487dad;
+  }
